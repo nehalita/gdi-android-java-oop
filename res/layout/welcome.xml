@@ -1,54 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-             android:orientation="vertical"
-             android:padding="8dip"
-             android:background="@color/WHITE">
-    <TextView android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:text="Welcome text"
-              android:textColor="@color/PURPLE"
-              android:id="@+id/welcomeText"
-            android:padding="16dip"/>
-    <EditText android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:inputType="textCapSentences"
-              android:hint="Enter username"
-              android:id="@+id/usernameField"
-              android:textColor="@color/RED"/>
-    <Button android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Sign in"
-            android:onClick="login"
-            android:id="@+id/login"/>
-    <LinearLayout android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="vertical"
-                  android:padding="16dip">
-        <Button android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:text="Add picture"
-                android:onClick="openPictureActivity"
-                />
-        <Button android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:text="Go to Gallery"
-                android:onClick="openGalleryActivity"/>
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/WHITE"
+    android:orientation="vertical"
+    android:padding="8dip" >
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dip"
+        android:text="Welcome text"
+        android:textColor="@color/PURPLE" />
+
+    <EditText
+        android:id="@+id/usernameField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter username"
+        android:inputType="textCapSentences"
+        android:textColor="@color/RED" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="login"
+        android:text="Sign in" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dip" >
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:onClick="openPictureActivity"
+            android:text="Add picture" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:onClick="openGalleryActivity"
+            android:text="Go to Gallery" />
     </LinearLayout>
 
-    <RelativeLayout  android:layout_width="fill_parent"
-                     android:layout_height="fill_parent"
-        >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
 
-        <Button android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Logout"
-                android:onClick="logout"
-                android:layout_alignParentBottom="true"
-                android:id="@+id/logout"
-                />
-        </RelativeLayout>
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:onClick="logout"
+            android:text="Logout" />
+    </RelativeLayout>
 
 </LinearLayout>
