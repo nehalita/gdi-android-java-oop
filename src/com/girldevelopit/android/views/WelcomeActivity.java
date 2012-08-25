@@ -41,6 +41,13 @@ public class WelcomeActivity extends Activity
         this.app = (GirlDevelopIt)getApplicationContext();
         initElements();
     }
+    
+//    public WelcomeActivity(Context context) {
+//    	myNumber = 42;
+//    }
+//    
+//    new WelcomeActivity(context);
+    
     /*
     	This function gives values to all the elements in our layout 
     	It also decides whether or not to show the log in text box ir the logout button
@@ -79,48 +86,51 @@ public class WelcomeActivity extends Activity
         //however, getText() does not return a string, but instead it returns raw data. think 0s and 1s
         //to turn that data int a string, you will use .toString()
         //then, see if that string is an empty string .equals("");
-        if(usernameField.getText().toString().equals("")){
-            //if there is no username entered, build an alert with a message prompting the usern to enter something into the field. set the NegativeButton to have an onclick listener that closes the alert
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Please enter your username")
-                    .setCancelable(false)
-                    .setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-                        }
-                    });
-            AlertDialog alert = builder.create();
-            alert.show();
-        }
-        else{
-            //if there was data in the text box, save the username in the textbox and reload the elements on the screen by using initElements()
-            app.setUsername(usernameField.getText().toString());
-            usernameField.setText("");
-            int i = usernameField.getText().toString().length();
-            initElements();
-        }
+    	if(usernameField.getText().toString().equals("")){
+    		//if there is no username entered, build an alert with a message prompting the usern to enter something into the field. set the NegativeButton to have an onclick listener that closes the alert
+    		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    		builder.setMessage("Please enter your username")
+    		.setCancelable(false)
+    		.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+    			public void onClick(DialogInterface dialog, int id) {
+    				dialog.cancel();
+    			}
+    		});
+    		AlertDialog alert = builder.create();
+    		alert.show();
+    	}
+    	else{
+    		//if there was data in the text box, save the username in the textbox and reload the elements on the screen by using initElements()
+    		app.setUsername(usernameField.getText().toString());
+    		usernameField.setText("");
+    		//int i = usernameField.getText().toString().length();
+    		initElements();
+    	}
     }
     /*
     	This function is called when the user presses the logout button. it sets the username to be an empty string and reloads the elements on the page using initElements();
-    */
+     */
 
     public void logout(View view){
-        app.setUsername("");
-        initElements();
+    	app.setUsername("");
+    	initElements();
     }
     /*
-    	this function is called when the user presses the add a takepicture button. it creates an intent which will have WelcomeActivity.this as the "from" parameter and TakePictureActivity.class as the "to" parameter
-    */
+    	this function is called when the user presses the add picture button. it creates an intent which will have WelcomeActivity.this as the "from" parameter and TakePictureActivity.class as the "to" parameter
+     */
 
     public void openPictureActivity(View view){
-
+    	Intent intent = new Intent(WelcomeActivity.this,TakePictureActivity.class);
+    	startActivity(intent);
     }
 
     /*
         this function is called when the user presses the go to gallery button. it creates an intent which will have WelcomeActivity.this as the "from" parameter and GalleryActivity.class as the "to" parameter
-    */
+     */
 
     public void openGalleryActivity(View view){
+    	Intent intent = new Intent(WelcomeActivity.this,GalleryActivity.class);
+    	startActivity(intent);
     }
 
 }

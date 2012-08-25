@@ -45,3 +45,7 @@ ant.properties
 local.properties
 build.xml
 out/
+
+# Android generated files #
+############################
+bin/
