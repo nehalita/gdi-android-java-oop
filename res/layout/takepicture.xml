@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="8dip"
     android:background="@color/WHITE"
-    >
+    android:orientation="vertical"
+    android:padding="8dip" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload an image!"
+        android:textColor="@color/GREEN" />
+
+    <EditText
+        android:id="@+id/titleField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Add title"
+        android:inputType="textCapSentences"
+        android:textColor="@color/PURPLE" />
+
+    <EditText
+        android:id="@+id/descriptionField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Add description"
+        android:inputType="textCapSentences"
+        android:textColor="@color/BLUE" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dip"
+        android:orientation="horizontal" >
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:onClick="takePicture"
+            android:text="Take Picture" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:onClick="choosePicture"
+            android:text="Choose Picture" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/pictureFromCamera"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/savePicture"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="savePicture"
+        android:text="Done" />
 
 </LinearLayout>
-
